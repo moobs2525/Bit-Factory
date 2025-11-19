@@ -1,16 +1,25 @@
 package org.example;
+import java.util.ArrayList;
 import java.util.Random;
 
 public class Factory
 {
-    public boolean produceRandomBit(){
+    public void produceRandomBit(){
         Random random = new Random();
-
-        int random2 = random.nextInt(0,2);
-
-        System.out.println(random2);
+        ArrayList<Boolean> bits = new ArrayList<>();
 
 
-        return true;
+        for (int i = 0; i <= 8; i++){
+            int randomNumber = random.nextInt(0,2);
+            boolean numberBit = true;
+
+            if (randomNumber == 1){
+                bits.add(numberBit);
+            } else {
+                numberBit = false;
+                bits.add(numberBit);
+            }
+        }
+        System.out.println(bits);
     }
 }
