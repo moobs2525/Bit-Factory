@@ -1,9 +1,14 @@
 package org.example;
+import java.util.ArrayList;
+import java.util.Random;
 
 import java.util.ArrayList;
 
 public class Factory
 {
+    public boolean produceRandomBits() {
+        Random random = new Random();
+        return random.nextInt(0, 2) == 1;
     public boolean produceRandomBit()
     {
     }
