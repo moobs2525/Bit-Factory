@@ -7,6 +7,10 @@ import java.util.ArrayList;
 public class Factory
 {
 
+    private int counterGood;
+    private int counterBad;
+    private StringBuilder sb = new StringBuilder();
+
     public ArrayList<Boolean> produceRandomBits()
     {
         ArrayList<Boolean> bits = new ArrayList<>();
@@ -23,7 +27,7 @@ public class Factory
         if (numberOfLists <= 0) {
             return;
         }
-        produceRandomBits();
+        makeChars(produceByte(produceRandomBits()));
         generateBitLists(numberOfLists - 1);
     }
 
@@ -42,18 +46,33 @@ public class Factory
 
     public void makeChars(int byteValue)
     {
-        char character = (char) byteValue;
+
         if (isLetterValid(byteValue))
         {
-            System.out.println("Character: " + character);
+            counterGood++;
+            char goodChar = (char)byteValue;
+            sb.append((goodChar));
         } else {
-            System.out.println("Invalid char.");
+            counterBad++;
         }
+    }
+
+    public void displayCounters()
+    {
+        System.out.println("Good characters: " + counterGood);
+        System.out.println("Invalid characters: " + counterBad);
     }
 
     public boolean isLetterValid(int byteValue)
     {
         return byteValue >= 97 && byteValue <= 122;
+    }
+
+    public void charCombiner()
+    {
+
+        System.out.println(sb.toString());
+
     }
 }
 

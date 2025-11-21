@@ -6,7 +6,10 @@ public class Main {
     {
         Factory factory = new Factory();
         factory.produceRandomBits();
-        factory.makeChars(123);
+        factory.generateBitLists(100);
+        factory.displayCounters();
+        factory.charCombiner();
+
 
 
     }
