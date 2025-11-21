@@ -27,17 +27,17 @@ public class Factory
         generateBitLists(numberOfLists - 1);
     }
 
-    public int produceByte(ArrayList<Boolean> bitList)
+    public byte produceByte(ArrayList<Boolean> bits)
     {
-        int byteValue = 0;
-        int bitListSize = bitList.size() - 1; //-1 for indexing
-        for (int i = bitListSize; i >= 0; i--) {
-            if (bitList.get(i)) {
-                byteValue += Math.pow(2, bitListSize - i);
+        byte byteVal = 0;
+        for (int i = bits.size() - 1; i >= 0; i--)
+        {
+            if (bits.get(i))
+            {
+                byteVal += Math.pow(2, i);
             }
         }
-        System.out.println("Byte value: " + byteValue);
-        return byteValue;
+        return byteVal;
     }
 
     public void makeChars(int byteValue)
