@@ -9,7 +9,9 @@ public class Factory {
     public ArrayList<Boolean> produceRandomBits() {
         ArrayList<Boolean> bits = new ArrayList<>();
         Random random = new Random();
-        bits.add(random.nextInt(0,2) == 1);
+        for (int i = 0; i <= 8; i++){
+            bits.add(random.nextInt(0,2) == 1);
+        }
         return bits;
     }
 
