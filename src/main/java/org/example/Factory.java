@@ -40,7 +40,6 @@ public class Factory
         return byteVal;
     }
 
-
     public void makeChars(int byteValue)
     {
         char character = (char) byteValue;
