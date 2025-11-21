@@ -43,7 +43,17 @@ public class Factory
     public void makeChars(int byteValue)
     {
         char character = (char) byteValue;
-        System.out.println("Character: " + character);
+        if (isLetterValid(byteValue))
+        {
+            System.out.println("Character: " + character);
+        } else {
+            System.out.println("Invalid char.");
+        }
+    }
+
+    public boolean isLetterValid(int byteValue)
+    {
+        return byteValue >= 97 && byteValue <= 122;
     }
 }
 

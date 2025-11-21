@@ -6,6 +6,8 @@ public class Main {
     {
         Factory factory = new Factory();
         factory.produceRandomBits();
+        factory.makeChars(123);
+
 
     }
 }
