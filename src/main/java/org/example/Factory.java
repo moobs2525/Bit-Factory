@@ -18,6 +18,15 @@ public class Factory
         return bits;
     }
 
+    public void generateBitLists(int numberOfLists)
+    {
+        if (numberOfLists <= 0) {
+            return;
+        }
+        produceRandomBits();
+        generateBitLists(numberOfLists - 1);
+    }
+
     public byte produceByte(ArrayList<Boolean> bits)
     {
         byte byteVal = 0;
